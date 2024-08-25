@@ -11,3 +11,7 @@ def create_app(): # 애플리케이션 팩토리 -> 쉽게 말해 app 객체를 
     app.register_blueprint(promise.bp)
 
     return app
+
+if __name__ == "__main__":
+    app = create_app()
+    app.run(host="127.0.0.1", port=5000)
