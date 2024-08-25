@@ -5,7 +5,6 @@ from controller import promise
 
 
 def create_app(): # 애플리케이션 팩토리 -> 쉽게 말해 app 객체를 생성하여 반환하는 함수
-    
     app = Flask(__name__)
 
     app.register_blueprint(main.bp)
