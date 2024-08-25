@@ -1,0 +1,14 @@
+```json
+[
+    {"text": "종로구민", "value": 8},
+    {"text": "노무현", "value": 6},
+    {"text": "정치", "value": 5},
+    {"text": "경제", "value": 5},
+    {"text": "청년", "value": 4},
+    {"text": "공정", "value": 4},
+    {"text": "주거", "value": 4},
+    {"text": "약속", "value": 4},
+    {"text": "문화", "value": 4},
+    {"text": "지원", "value": 4}
+]
+```
