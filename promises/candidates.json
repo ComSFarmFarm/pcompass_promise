@@ -2,70 +2,87 @@
     "candidates": [
         {
             "name": "고민정",
+            "party": "더불어민주당",
             "region": "광진구을"
         },
         {
             "name": "김기웅",
+            "party": "국민의힘",
             "region": "중구남구"
         },
         {
             "name": "김준혁",
+            "party": "더불어민주당",
             "region": "수원시정"
         },
         {
             "name": "염태영",
+            "party": "더불어민주당",
             "region": "수원시무"
         },
         {
             "name": "안철수",
+            "party": "국민의힘",
             "region": "성남시분당구갑"
         },
         {
             "name": "김영진",
+            "party": "더불어민주당",
             "region": "수원시병"
         },
         {
             "name": "백혜련",
+            "party": "더불어민주당",
             "region": "수원시을"
         },
         {
             "name": "김승원",
+            "party": "더불어민주당",
             "region": "수원시갑"
         },
         {
             "name": "김기현",
+            "party": "국민의힘",
             "region": "남구을"
         },
         {
             "name": "김상욱",
+            "party": "국민의힘",
             "region": "남구갑"
         },
         {
             "name": "박성민",
+            "party": "국민의힘",
             "region": "중구"
         },
         {
             "name": "이인선",
+            "party": "국민의힘",
             "region": "수성구을"
         },
         {
             "name": "주호영",
+            "party": "국민의힘",
             "region": "수성구갑"
         },
         {
             "name": "나경원",
+            "party": "국민의힘",
             "region": "동작구을"
         },
         {
             "name": "권영세",
+            "party": "국민의힘",
             "region": "용산구"
         },
         {
             "name": "곽상언",
+            "party": "더불어민주당",
             "region": "종로구"
         },
         {
             "name": "전현희",
+            "party": "더불어민주당",
             "region": "중구성동구갑"
         }
     ]
