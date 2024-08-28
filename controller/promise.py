@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify, send_file
 
 import pdftotext
+import json
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
@@ -12,6 +13,19 @@ bp = Blueprint('promise', __name__, url_prefix='/promise')
 client = OpenAI(
     api_key=os.getenv('OPENAI_API_KEY')
 )
+
+@bp.route('/candidates', methods=['GET'])
+def candidates():
+    with open('promises/candidates.json', 'r') as file:
+        candidates = json.load(file)
+    
+    candidateNames = []
+    for candidate in candidates['candidates']:
+        name = candidate['name']
+        candidateNames.append(name)
+
+    return candidateNames
+
 
 @bp.route('/summary', methods=['POST'])
 def summary():
