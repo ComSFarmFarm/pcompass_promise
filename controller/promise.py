@@ -14,12 +14,24 @@ client = OpenAI(
     api_key=os.getenv('OPENAI_API_KEY')
 )
 
-@bp.route('/candidates', methods=['GET'])
-def candidates():
+def getCandidates():
     with open('promises/candidates.json', 'r') as file:
         candidates = json.load(file)
     
+    return candidates
+
+def getRegion(name):
+    candidates = getCandidates()
+
+    for candidate in candidates['candidates']:
+        if candidate['name'] == name:
+            return candidate['region']
+
+@bp.route('/candidates', methods=['GET'])
+def candidates():
+    candidates = getCandidates()
     candidateNames = []
+
     for candidate in candidates['candidates']:
         name = candidate['name']
         candidateNames.append(name)
@@ -34,8 +46,10 @@ def summary():
         return jsonify({"error": "No JSON data provided"}), 400
 
     # code = data.code
-    region = data["region"]
+    # region = data["region"]
     name = data["name"]
+    region = getRegion(name)
+    
 
     if os.path.isfile(f'promises/20240410_{region}_{name}_선거공보_summary.txt'): # 이미 요약된 파일이 존재하는 경우
         with open(f'promises/20240410_{region}_{name}_선거공보_summary.txt', 'r', encoding='utf-8') as file:
@@ -72,8 +86,9 @@ def keywords():
     if data is None:
         return jsonify({"error": "No JSON data provided"}), 400
     
-    region = data["region"]
+    # region = data["region"]
     name = data["name"]
+    region = getRegion(name)
 
     if os.path.isfile(f'promises/20240410_{region}_{name}_선거공보_keywords.txt'): # 이미 키워드 파일이 존재하는 경우
         with open(f'promises/20240410_{region}_{name}_선거공보_keywords.txt', 'r', encoding='utf-8') as file:
@@ -109,8 +124,9 @@ def detail():
         return jsonify({"error": "No JSON data provided"}), 400
     
     # code = data.code
-    region = data["region"]
+    # region = data["region"]
     name = data["name"]
+    region = getRegion(name)
 
     if os.path.isfile(f'promises/20240410_{region}_{name}_선거공보.pdf'):
         return send_file(f'promises/20240410_{region}_{name}_선거공보.pdf', as_attachment=True, download_name='file.pdf')
